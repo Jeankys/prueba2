@@ -8,7 +8,7 @@ const App = () => {
     const [date, setDate] = useState('');
 
     useEffect(() => {
-        axios.get('https://backend-nine-flame.vercel.app//api/flights')
+        axios.get('https://backend-jeankys-projects.vercel.app/api/flights')
             .then(response => setFlights(response.data))
             .catch(error => console.error(error));
     }, []);
@@ -16,7 +16,7 @@ const App = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const newFlight = { origin, destination, date };
-        axios.post('https://backend-nine-flame.vercel.app//api/flights', newFlight)
+        axios.post('https://backend-jeankys-projects.vercel.app/api/flights', newFlight)
             .then(response => setFlights([...flights, response.data]))
             .catch(error => console.error(error));
     };
