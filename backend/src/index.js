@@ -15,7 +15,9 @@ mongoose.connect('mongodb://localhost:27017/flightBooking', {
     console.error('Error connecting to MongoDB', err);
 });
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://backend-3xs8dnafa-jeankys-projects.vercel.app'
+  }));
 app.use(express.json());
 app.use('/api/flights', flightRoutes);
 
