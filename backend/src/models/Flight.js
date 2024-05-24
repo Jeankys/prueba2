@@ -1,9 +1,18 @@
 const mongoose = require('mongoose');
 
 const flightSchema = new mongoose.Schema({
-    origin: String,
-    destination: String,
-    date: String,
+    origin: {
+        type: String,
+        required: true
+    },
+    destination: {
+        type: String,
+        required: true
+    },
+    date: {
+        type: String,
+        required: true
+    },
 });
 
 const Flight = mongoose.model('Flight', flightSchema);
